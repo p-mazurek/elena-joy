@@ -1,0 +1,403 @@
+@import url('./animations.css');
+
+@font-face {
+    font-family: 'Ruhl';
+    src: url('./fonts/FrankRuhlLibre-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Ruhl Medium';
+    src: url('./fonts/FrankRuhlLibre-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Great Vibes';
+    src: url('./fonts/GreatVibes-Regular.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    --h1: calc(2rem + 1vw);
+    --h2: calc(3.5rem + 1vw);
+    --h3: calc(3rem + 1vw);
+    --h4: calc(2.4rem + 1vw);
+    --text: calc(1.5rem + 1vw);
+    --big: calc(6rem + 1vw);
+    --special-color: #906272;
+    --background-color: #414141;
+    --gray-text: #525252;
+    scroll-behavior: smooth;
+}
+
+h2 {
+    font-size: var(--h2);
+    font-family: 'Ruhl', serif;
+}
+
+h3 {
+    font-size: var(--h3);
+}
+
+h4 {
+    font-size: var(--h4);
+}
+
+a,
+ul,
+li,
+p {
+    list-style-type: none;
+    text-decoration: none;
+    font-size: var(--text);
+    color: inherit;
+}
+
+body {
+    animation: openingWebsite 1s ease-in-out;
+
+}
+
+.about-text {
+    margin-bottom: 6rem;
+}
+
+.about-text h3 {
+    margin-bottom: 2rem;
+    font-family: 'Ruhl', sans-serif;
+}
+
+.about-text p {
+    font-family: 'Lato', sans-serif;
+}
+
+.contact {
+    padding: 20% 15vw;
+    background: url('./img/contact-image.jpg') right no-repeat;
+}
+
+
+.contact h4 {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-head {
+    font-family: 'Lato', sans-serif;
+    max-width: 45rem;
+}
+
+.contact h4::after {
+    content: 'touch';
+    position: absolute;
+    bottom: -7rem;
+    right: 3rem;
+    font-family: 'Great Vibes';
+    color: var(--special-color);
+    transform: skewY(10deg);
+    font-size: 10rem;
+    z-index: -1;
+}
+
+
+.description {
+    flex: 2 1 50%;
+    background-color: var(--background-color);
+    color: white;
+    padding: 10rem 10rem 5rem;
+}
+
+.description h2 {
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+.flex {
+    flex-direction: column;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--background-color);
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.footer h4 {
+    flex: 3 1 30rem;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1 1 30%;
+}
+
+.gallery {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.gallery>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    z-index: 0;
+    transition: .2s ease-in-out
+}
+.gallery>img:hover {
+    transform: scale(1.008);
+    transition: .2s ease-in-out
+}
+
+.gallery-item1 {
+    grid-column: 1/3;
+}
+
+.gallery-item2 {
+    grid-column: 3/4;
+    grid-row: 1/3;
+}
+
+.gallery-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background-color);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    font-family: 'Lato', sans-serif;
+    z-index: 1;
+}
+
+.gallery-text h4 {
+    font-family: 'Ruhl';
+    margin-bottom: 1rem;
+}
+
+
+
+.hero {
+    width: 95%;
+    min-height: 90vh;
+    margin: 0 0 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.hero-background {
+    flex: 1 1 40rem;
+    background: linear-gradient(#dad8dd, #dad1d4);
+    position: relative;
+    z-index: 1;
+}
+
+.hero-info {
+    flex: 2 1 40rem;
+    text-align: center;
+    align-self: center;
+    padding: 2rem 8%;
+    z-index: 2;
+}
+
+.hero-info p {
+    margin: 2rem 0;
+    color: var(--gray-text);
+    font-family: 'Lato';
+}
+
+.hero-info a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 2rem 7rem;
+    border: 3px solid black;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Lato';
+
+}
+
+.hero-info a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 102%;
+    height: 102%;
+    background-color: #000;
+    transform: translateX(-102%);
+    transition: .2s ease-in-out;
+}
+
+.hero-info a:hover {
+    color: #fff;
+    transition: .2s ease-in-out;
+
+}
+
+.hero-info a:hover::before {
+    transform: translateX(0);
+    transition: .2s ease-in-out;
+}
+
+
+.hero-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-plant {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    z-index: -1;
+    object-fit: contain;
+    width: 90%;
+    height: 90%;
+    transform-origin: 50% 100%;
+
+}
+
+.logo {
+    flex: 1 1 20rem;
+    font-family: 'Great Vibes';
+    font-size: var(--h1);
+    cursor: pointer;
+}
+
+.mail {
+    display: flex;
+    flex-direction: column;
+}
+
+.mail button {
+    background: var(--special-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 3.5rem;
+    cursor: pointer;
+}
+
+.mail input {
+    height: 4rem;
+    padding: 3rem 2rem;
+    font-size: 3rem;
+    background-color: var(--background-color);
+    color: white;
+    border: none;
+    margin: 2rem 0;
+}
+
+.mail label {
+    font-size: 4rem;
+}
+
+.main-head {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: rgba(250, 250, 250, .5);
+    backdrop-filter: blur(1rem);
+    min-height: 10vh;
+
+}
+
+.nav {
+    width: 90%;
+    margin: auto;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 1 40rem;
+
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 20rem;
+    font-size: var(--text);
+    font-family: 'Lato', sans-serif;
+}
+
+.nav-links li {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 3rem;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+.nav-links li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #000;
+    transform: translateX(-102%);
+    transition: .2s ease-in-out;
+
+}
+
+.nav-links li:hover::before {
+    transform: translateX(0);
+    transition: .2s ease-in-out;
+}
+
+.plant1 {
+    transform: translateX(-25rem);
+    animation: movePlant1 1.5s ease-in infinite alternate-reverse;
+}
+
+.plant2 {
+    transform: translateX(20rem);
+    animation: movePlant2 1.5s ease-in infinite alternate-reverse;
+}
+
+.work {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work-background {
+    background: url('/img/about-image.png') center no-repeat;
+    background-size: cover;
+    flex: 1 1 30%;
+
+}
+
+.work-text {
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2rem;
+    text-align: center;
+    margin-top: 20rem;
+}
