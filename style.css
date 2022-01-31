@@ -499,7 +499,7 @@ body {
 }
 
 .work-background {
-    background: url('/img/about-image.png') center no-repeat;
+    background: url('./img/about-image.png') center no-repeat;
     background-size: cover;
     -webkit-box-flex: 1;
     -ms-flex: 1 1 30%;
